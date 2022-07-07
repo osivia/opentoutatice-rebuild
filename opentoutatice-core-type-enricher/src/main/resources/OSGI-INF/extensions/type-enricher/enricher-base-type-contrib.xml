@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+
+<component name="org.opentoutatice.core.type.enricher.base">
+
+	<require>org.opentoutatice.core.type.enricher.EnricherTypeService
+	</require>
+
+	<extension
+		target="org.opentoutatice.core.type.enricher.EnricherTypeService"
+		point="basettc">
+
+		<doctype name="*" append="true">
+			<schema name="uid" />
+			<schema name="toutatice" />
+			<facet name="Versionable" />
+			<!-- <configuration>
+				<prefetch>ttc:webid</prefetch>
+			</configuration> -->
+		</doctype>
+
+	</extension>
+	
+	<extension target="org.opentoutatice.core.type.enricher.EnricherTypeService"
+		point="excludedRules">
+
+		<rules>
+			<facet name="SystemDocument" />
+			<!-- Workflows -->
+			<facet name="DocumentRoute" />
+			<facet name="Routable" />
+			<facet name="RouteStep" />
+			<facet name="StepFolder" />
+			<facet name="Task" />
+			<types>
+				<type>AdministrativeStatus</type>
+			</types>
+		</rules>
+
+	</extension>
+
+</component>

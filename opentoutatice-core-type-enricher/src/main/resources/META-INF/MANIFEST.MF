@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 1
+Bundle-Name: [Opentoutatice Core] Type enricher 
+Bundle-SymbolicName: org.opentoutatice.core.type.enricher;singleton:=true
+Bundle-Version: 2.0.0
+Bundle-Localization: plugin
+Bundle-Category: stateful
+Nuxeo-Component: OSGI-INF/extensions/schemas/base-schema-contrib.xml,
+ OSGI-INF/extensions/type-enricher/EnricherTypeService.xml,
+ OSGI-INF/extensions/type-enricher/enricher-base-type-contrib.xml
+ 
+ 

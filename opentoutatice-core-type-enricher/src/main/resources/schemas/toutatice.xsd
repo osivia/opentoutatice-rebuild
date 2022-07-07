@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:nxs="http://www.nuxeo.org/ecm/project/schemas/ACRENNES2/toutatice"
+           targetNamespace="http://www.nuxeo.org/ecm/project/schemas/ACRENNES2/toutatice">
+    <!-- helper XSD definitions for list types -->
+    <xs:complexType name="content">
+        <xs:sequence>
+            <xs:element name="encoding" type="xs:string"/>
+            <xs:element name="mime-type" type="xs:string"/>
+            <xs:element name="data" type="xs:base64Binary"/>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="length" type="xs:long"/>
+            <xs:element name="digest" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:simpleType name="stringList">
+        <xs:list itemType="xs:string"/>
+    </xs:simpleType>
+    <xs:simpleType name="doubleList">
+        <xs:list itemType="xs:double"/>
+    </xs:simpleType>
+    <xs:simpleType name="dateList">
+        <xs:list itemType="xs:date"/>
+    </xs:simpleType>
+    <xs:simpleType name="integerList">
+        <xs:list itemType="xs:integer"/>
+    </xs:simpleType>
+    <xs:simpleType name="booleanList">
+        <xs:list itemType="xs:boolean"/>
+    </xs:simpleType>
+    <xs:complexType name="blobList">
+        <xs:sequence>
+            <xs:element name="item" type="nxs:content" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="childrenPageTemplate" type="xs:string"/>
+    <xs:element name="contextualizeExternalContents" type="xs:boolean" default="false"/>
+    <xs:element name="contextualizeInternalContents" type="xs:boolean" default="false"/>
+    <xs:element name="hiddenInNavigation" type="xs:boolean"/>
+    <xs:element name="images" type="nxs:ttc_imagesListType"/>
+    <xs:complexType name="ttc_imagesListType">
+        <xs:sequence>
+            <xs:element name="item" type="nxs:ttc_imagesType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="ttc_imagesType">
+        <xs:sequence>
+            <xs:element name="filename" type="xs:string"/>
+            <xs:element name="file" type="nxs:content"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="isOnline" type="xs:boolean" default="false"/>
+    <xs:element name="isPreloadedOnLogin" type="xs:boolean"
+                default="false"/>
+    <xs:element name="pageScope" type="xs:string"/>
+    <xs:element name="pageTemplate" type="xs:string"/>
+    <xs:element name="queryPart" type="xs:string"/>
+    <xs:element name="showInMenu" type="xs:boolean" default="false"/>
+    <xs:element name="spaceID" type="xs:string"/>
+    <xs:element name="tabOrder" type="xs:integer" default="0"/>
+    <xs:element name="vignette" type="nxs:content"/>
+    <xs:element name="keywords" type="nxs:stringList"/>
+    <xs:element name="webid" type="xs:string"/>
+    <xs:element name="lstTargetedPublic" type="nxs:stringList"/>
+    <xs:element name="explicitUrl" type="xs:string"/>
+    <xs:element name="extensionUrl" type="xs:string"/>
+    <xs:element name="theme" type="xs:string"/>
+    <xs:element name="editorialTitle" type="xs:string"/>
+    <xs:element name="abstract" type="xs:string"/>
+    <xs:element name="useES" type="xs:boolean" default="false"/>
+    <xs:element name="selectors" type="xs:string"/>
+    <!-- #652 - Date fonctionnelle de publication d'un document -->
+    <xs:element name="publicationDate" type="xs:date"/>
+    <!-- #1444 - Commentaires interdits -->
+    <xs:element name="commentsForbidden" type="xs:boolean"/>
+    <!-- #1529 - Métadonnées non présentées  -->
+    <xs:element name="hideMetadatas" type="xs:boolean"/>
+	<!-- related software version -->
+	<xs:element name="modelVersion" type="xs:string" />	
+	
+	<!-- Note: the elements
+	     lockOwner (string)
+	     lockCreated (date) 
+	     are also available in ES denormalized document -->
+		
+</xs:schema>
