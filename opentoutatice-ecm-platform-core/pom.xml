@@ -1,0 +1,30 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+	    <groupId>fr.opentoutatice.platform</groupId>
+	    <artifactId>opentoutatice-ecm-platform-parent</artifactId>
+	    <version>5.0-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>opentoutatice-ecm-platform-core</artifactId>
+	<packaging>jar</packaging>
+	<name>Partie core de la plate-forme toutatice</name>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.nuxeo.ecm.automation</groupId>
+			<artifactId>nuxeo-automation-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.nuxeo.ecm.automation</groupId>
+			<artifactId>nuxeo-automation-server</artifactId>
+		</dependency>
+		<dependency>
+		  <groupId>commons-lang</groupId>
+  			<artifactId>commons-lang</artifactId>
+		</dependency>
+
+	</dependencies>
+	
+</project>

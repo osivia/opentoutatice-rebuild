@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<component name="fr.toutatice.ecm.platform.core.services.proxyfactory">
+
+	<service>
+		<provide
+			interface="fr.toutatice.ecm.platform.core.services.proxyfactory.ProxyFactoryCfgService" />
+	</service>
+
+	<implementation
+		class="fr.toutatice.ecm.platform.core.services.proxyfactory.ProxyFactoryCfgServiceImpl" />
+
+	<extension-point name="handlers">
+		<object
+			class="fr.toutatice.ecm.platform.core.services.proxyfactory.ProxyFactoryCfgDescriptor" />
+	</extension-point>
+
+</component>

@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+
+<component name="toutatice.ecm.plateform.automation.chains">
+
+	<require>org.nuxeo.ecm.core.operation.OperationServiceComponent</require>
+
+	<extension target="org.nuxeo.ecm.core.operation.OperationServiceComponent"
+		point="chains">
+		
+		<chain id="createOp">
+			<!-- <operation id="Context.FetchDocument" />
+			<operation id="Document.SetSpaceID" />
+			<operation id="Document.SetDomainID" /> -->
+			<operation id="Document.SetWebId" />
+		</chain>
+
+		<!-- Chaines pour les webid -->
+		<chain id="webIdUnicity">
+			<operation id="Document.SetWebId" />
+		</chain>
+
+
+	</extension>
+
+</component>

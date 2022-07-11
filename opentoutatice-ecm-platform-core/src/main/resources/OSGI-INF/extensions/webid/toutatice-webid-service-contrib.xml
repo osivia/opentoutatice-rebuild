@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+
+<component name="fr.toutatice.ecm.platform.service.webid.TTCUIDGeneratorService">
+
+  <implementation class="fr.toutatice.ecm.platform.service.webid.TTCUIDGeneratorService" />
+
+  <service>
+    <provide interface="org.nuxeo.ecm.core.uidgen.UIDSequencer"/>
+  </service>
+
+  <extension-point name="generators">
+    <documentation>
+      The extension point provided by this component gives the possibility to
+      register generators. A generator should be an implementation of
+      <pre>org.nuxeo.ecm.platform.uidgen.UIDGenerator</pre>
+      or a subclass of
+      <pre>org.nuxeo.ecm.platform.uidgen.AbstractUIDGenerator</pre>.
+    </documentation>
+
+    <object class="org.nuxeo.ecm.core.uidgen.UIDGeneratorDescriptor" />
+  </extension-point>
+
+  <extension target="fr.toutatice.ecm.platform.service.webid.TTCUIDGeneratorService" point="generators">
+        <generator name="WebIdsGenerator" class="fr.toutatice.ecm.platform.service.webid.WebIdsGenerator">
+            <propertyName>ttc:webid</propertyName>
+            <docType>*</docType>
+        </generator>
+   </extension>
+
+</component>
