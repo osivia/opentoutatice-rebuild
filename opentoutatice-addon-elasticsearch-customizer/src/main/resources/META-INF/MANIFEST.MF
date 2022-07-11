@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-Vendor: Nuxeo
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .
+Bundle-Version: 1.0
+Bundle-Name: fr.toutatice.ecm.platform.elasticsearch.customizer
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: fr.toutatice.ecm.platform.elasticsearch.customizer
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Nuxeo-Component: OSGI-INF/extensions/nx-es-service-contrib.xml,
+ OSGI-INF/extensions/es-customizer-registry-service.xml, 
+ OSGI-INF/extensions/default/es-customizer-registry-contrib.xml

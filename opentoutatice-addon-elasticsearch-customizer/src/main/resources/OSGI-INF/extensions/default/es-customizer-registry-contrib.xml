@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+
+<component
+    name="fr.toutatice.ecm.es.customizer.registry.ESCustomizersServiceRegistry.default"
+    version="1.0">
+    
+    <require>fr.toutatice.ecm.es.customizer.registry.ESCustomizersServiceRegistry</require>
+    
+    <extension target="fr.toutatice.ecm.es.customizer.registry.ESCustomizersServiceRegistry"
+        point="listeners">
+        <listener class="fr.toutatice.ecm.es.customizer.listeners.impl.DefaultCustomESListener" />
+        <listener class="fr.toutatice.ecm.es.customizer.listeners.impl.SpaceTitleChangeListener" />
+        
+    </extension>
+    
+    <extension target="fr.toutatice.ecm.es.customizer.registry.ESCustomizersServiceRegistry"
+        point="writers">
+        <writer class="fr.toutatice.ecm.es.customizer.writers.impl.DefaultCustomJsonESWriter" />
+        <writer class="fr.toutatice.ecm.es.customizer.writers.impl.UserProfileWriter" />
+    </extension>
+
+</component>

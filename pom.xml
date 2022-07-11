@@ -12,6 +12,7 @@
 	<modules>
 		<module>opentoutatice-core-type-enricher</module>
 		<module>opentoutatice-ecm-platform-core</module>
+		<module>opentoutatice-addon-elasticsearch-customizer</module>
 	</modules>
 
 	<properties>
@@ -72,10 +73,30 @@
 			</dependency>
 			
 			<dependency>
-			  <groupId>commons-lang</groupId>
-  				<artifactId>commons-lang</artifactId>
-  				<version>2.6</version>
+				<groupId>org.nuxeo.elasticsearch</groupId>
+				<artifactId>nuxeo-elasticsearch-core</artifactId>
+				<version>${nuxeo.version}</version>	
+			</dependency>
+
+			<dependency>
+				<groupId>org.nuxeo.ecm.platform</groupId>
+				<artifactId>nuxeo-platform-directory-ldap</artifactId>
+				<version>${nuxeo.version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>commons-lang</groupId>
+	  			<artifactId>commons-lang</artifactId>
+	  			<version>2.6</version>
   			</dependency>
+  			
+  			<dependency>
+		        <groupId>org.codehaus.jackson</groupId>
+		        <artifactId>jackson-core-asl</artifactId>
+		        <version>1.8.1</version>
+      		</dependency>
+
+
 		</dependencies>
 	</dependencyManagement>
 

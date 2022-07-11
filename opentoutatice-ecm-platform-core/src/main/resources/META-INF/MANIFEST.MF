@@ -5,7 +5,6 @@ Bundle-SymbolicName: fr.toutatice.ecm.platform.core;singleton:=true
 Bundle-Version: 2.0.0
 Bundle-Localization: plugin
 Bundle-Vendor: Open Toutatice 
-Bundle-Activator: fr.toutatice.ecm.platform.core.components.ToutaticeCoreBundleActivator
 Bundle-Category: stateful
 Nuxeo-Component: OSGI-INF/extensions/automation/toutatice-chains-contrib.xml,
  OSGI-INF/extensions/automation/toutatice-event-handler-contrib.xml,
