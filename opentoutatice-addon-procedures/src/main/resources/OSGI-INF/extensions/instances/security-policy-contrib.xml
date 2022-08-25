@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+
+<component name="org.osivia.procedures.instances.security.policy">
+
+	<extension target="org.nuxeo.ecm.core.security.SecurityService" point="policies">
+		
+		<policy class="org.osivia.procedures.instances.security.ContainerSecurityPolicy"
+			name="piContainerPolicy" order="1" />
+
+	</extension>
+
+</component>

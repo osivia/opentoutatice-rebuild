@@ -1,0 +1,23 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:nxs="http://www.nuxeo.org/ecm/project/schemas/osivia/models/procedure"
+	targetNamespace="http://www.nuxeo.org/ecm/project/schemas/osivia/models/procedure">
+	
+	<xs:complexType name="globalVariablesReferenceType">
+		<xs:sequence>
+			<xs:element name="variableName" type="xs:string" />
+			<xs:element name="helpText" type="xs:string" />
+			<xs:element name="isInput" type="xs:boolean" default="true"/>
+			<xs:element name="required" type="xs:boolean" default="true"/>
+            <xs:element name="path" type="xs:string" />
+            <xs:element name="superLabel" type="xs:string" />
+            <xs:element name="isFieldSet" type="xs:boolean" default="false"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="globalVariablesReferenceList">
+		<xs:sequence>
+			<xs:element name="globalVariablesReference" type="nxs:globalVariablesReferenceType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+
+</xs:schema>

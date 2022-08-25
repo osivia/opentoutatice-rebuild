@@ -1,0 +1,22 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:nxs="http://www.nuxeo.org/ecm/project/schemas/osivia/models/procedure"
+	targetNamespace="http://www.nuxeo.org/ecm/project/schemas/osivia/models/procedure">
+	
+	<xs:include schemaLocation="base.xsd" />
+	
+	<xs:complexType name="globalVariablesDefinitionsType">
+		<xs:sequence>
+            <xs:element name="name" type="xs:string" />
+			<xs:element name="label" type="xs:string" />
+			<xs:element name="type" type="xs:string" />
+			<xs:element name="varOptions" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="globalVariablesDefinitionsList">
+		<xs:sequence>
+			<xs:element name="definition" type="nxs:globalVariablesDefinitionsType" minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+
+</xs:schema>

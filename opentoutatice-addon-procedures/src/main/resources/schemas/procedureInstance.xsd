@@ -1,0 +1,19 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:nxs="http://www.nuxeo.org/ecm/project/schemas/osivia/models/procedure"
+	targetNamespace="http://www.nuxeo.org/ecm/project/schemas/osivia/models/procedure">
+	
+	<xs:include schemaLocation="base.xsd" />
+
+	<xs:include schemaLocation="globalVariablesValues.xsd" />
+    <xs:include schemaLocation="procedureObjectInstance.xsd" />
+    
+
+    <xs:element name="procedureInitiator" type="xs:string" />
+	<xs:element name="currentActors" type="nxs:stringList" />
+	<xs:element name="globalVariablesValues" type="nxs:globalVariablesValuesList" />
+    <xs:element name="currentStep" type="xs:string" />
+    <xs:element name="procedureModelWebId" type="xs:string" />
+    <xs:element name="procedureObjectInstances" type="nxs:procedureObjectInstanceList" />
+    
+	
+</xs:schema>

@@ -1,0 +1,16 @@
+<component name="org.osivia.procedures.instances.operations">
+
+  <extension target="org.nuxeo.ecm.core.operation.OperationServiceComponent"
+    point="operations" >
+      <operation class="org.osivia.procedures.instances.operations.StartProcedure" />
+      <operation class="org.osivia.procedures.instances.operations.UpdateProcedure" />
+      <!-- 
+      <operation class="org.osivia.procedures.instances.operations.CreateDocumentFromAttachment" />
+      <operation class="org.osivia.procedures.instances.operations.CreateDocumentFromBlob" />
+      <operation class="org.osivia.procedures.instances.operations.UpdateDocumentFromBlob" />
+       -->
+      <operation class="org.osivia.procedures.instances.operations.CancelProcedure" />
+      <!-- <operation class="org.osivia.procedures.instances.operations.ResumeProcedure" /> -->
+   </extension>
+   
+</component>

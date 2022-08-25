@@ -1,0 +1,25 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:nxs="http://www.nuxeo.org/ecm/project/schemas/osivia/models/procedure"
+	targetNamespace="http://www.nuxeo.org/ecm/project/schemas/osivia/models/procedure">
+	
+	<xs:include schemaLocation="base.xsd" />
+	
+	<xs:include schemaLocation="globalVariablesDefinitions.xsd" />
+	<xs:include schemaLocation="step.xsd" />
+    <xs:include schemaLocation="procedureObject.xsd" />
+    <xs:include schemaLocation="dashboard.xsd" />
+	
+	<xs:element name="authorizedGroups" type="nxs:stringList" />
+	<xs:element name="authorizedActors" type="nxs:stringList" />
+	
+    <xs:element name="globalVariablesDefinitions" type="nxs:globalVariablesDefinitionsList" />
+    <xs:element name="webIdParent" type="xs:string" />
+	<xs:element name="steps" type="nxs:stepsList" />
+	<xs:element name="dashboards" type="nxs:dashboardList" />
+	
+    <xs:element name="startingStep" type="xs:string" />
+    <xs:element name="procedureObjects" type="nxs:procedureObjectList" />
+    
+    <xs:element name="businessRules" type="xs:string" />
+
+</xs:schema>

@@ -1,0 +1,63 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+	    <groupId>fr.opentoutatice.platform</groupId>
+	    <artifactId>opentoutatice-ecm-platform-parent</artifactId>
+	    <version>5.0-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>opentoutatice-addon-procedures</artifactId>
+	<name>elasticsearch plugin</name>
+	<description>ES queries.</description>
+	
+	<dependencies>
+		<dependency>
+			<groupId>${parent.groupId}</groupId>
+			<artifactId>opentoutatice-addon-elasticsearch-customizer</artifactId>
+			<version>${parent.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>${parent.groupId}</groupId>
+			<artifactId>opentoutatice-ecm-platform-core</artifactId>
+			<version>${parent.version}</version>
+		</dependency>		
+		
+		<dependency>
+			<groupId>org.nuxeo.ecm.platform</groupId>
+			<artifactId>nuxeo-platform-task-api</artifactId>
+		</dependency>
+	
+		<dependency>
+			<groupId>org.nuxeo.ecm.routing</groupId>
+  			<artifactId>nuxeo-routing-core</artifactId>		
+		</dependency>
+	<!-- 
+		<dependency>
+			<groupId>org.nuxeo.ecm.automation</groupId>
+			<artifactId>nuxeo-automation-io</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-lang</groupId>
+  			<artifactId>commons-lang</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.nuxeo.elasticsearch</groupId>
+			<artifactId>nuxeo-elasticsearch-core</artifactId>	
+		</dependency>
+		
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+		    <artifactId>jackson-core-asl</artifactId>		
+		</dependency>
+
+		<dependency>
+		    <groupId>net.sf.json-lib</groupId>
+		    <artifactId>json-lib</artifactId>		
+		</dependency>		
+ -->
+	</dependencies>
+</project>

@@ -1,0 +1,38 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:nxs="http://www.nuxeo.org/ecm/project/schemas/osivia/models/procedure"
+	targetNamespace="http://www.nuxeo.org/ecm/project/schemas/osivia/models/procedure">
+	
+	<xs:include schemaLocation="base.xsd" />
+    
+    <xs:include schemaLocation="actions.xsd" />
+    <xs:include schemaLocation="globalVariablesReferences.xsd" />
+    
+	<xs:complexType name="step">
+		<xs:sequence>
+            <xs:element name="name" type="xs:string" />
+            <xs:element name="index" type="xs:integer" />
+            <xs:element name="reference" type="xs:string" />
+            <xs:element name="actors" type="nxs:stringList" />
+            <xs:element name="globalVariablesReferences" type="nxs:globalVariablesReferenceList" />
+            <xs:element name="actions" type="nxs:actionsList" />
+            <xs:element name="initAction" type="nxs:actionType" />
+            <xs:element name="notifiable" type="xs:boolean" default="false"/>
+            <xs:element name="notifEmail" type="xs:boolean" default="false"/>
+            <xs:element name="acquitable" type="xs:boolean" default="false"/>
+            <xs:element name="closable" type="xs:boolean" default="false"/>
+            <xs:element name="actionIdClosable" type="xs:string"/>
+            <xs:element name="actionIdYes" type="xs:string" />
+            <xs:element name="actionIdNo" type="xs:string" />
+            <xs:element name="stringMsg" type="xs:string" />
+            <xs:element name="actionIdDefault" type="xs:string" />
+            <xs:element name="endStepMsg" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+    
+    <xs:complexType name="stepsList">
+        <xs:sequence>
+            <xs:element name="step" type="nxs:step" minOccurs="0" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+
+<component name="org.osivia.procedures.instances.listener">
+
+	<require>org.nuxeo.ecm.core.event.EventServiceComponent</require>
+<!-- 
+	<extension target="org.nuxeo.ecm.core.event.EventServiceComponent"
+		point="listener">
+
+		<listener name="procedureInstanceListener" async="false"
+			postCommit="false" enabled="true"
+			class="org.osivia.procedures.instances.listener.ProcedureInstanceCreatedListener"
+			priority="100">
+			<event>documentCreated</event>
+		</listener>
+
+	</extension>
+	 -->
+</component>

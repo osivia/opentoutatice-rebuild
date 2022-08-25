@@ -14,6 +14,7 @@
 		<module>opentoutatice-ecm-platform-core</module>
 		<module>opentoutatice-addon-elasticsearch</module>
 		<module>opentoutatice-addon-elasticsearch-customizer</module>
+		<module>opentoutatice-addon-procedures</module>
 	</modules>
 
 	<properties>
@@ -87,6 +88,19 @@
 			<dependency>
 				<groupId>org.nuxeo.ecm.platform</groupId>
 				<artifactId>nuxeo-platform-directory-ldap</artifactId>
+				<version>${nuxeo.version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>org.nuxeo.ecm.platform</groupId>
+				<artifactId>nuxeo-platform-task-api</artifactId>
+				<version>${nuxeo.version}</version>
+			</dependency>
+			
+			
+			<dependency>
+  				<groupId>org.nuxeo.ecm.routing</groupId>
+  				<artifactId>nuxeo-routing-core</artifactId>			
 				<version>${nuxeo.version}</version>
 			</dependency>
 			<!-- 

@@ -1,0 +1,38 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:nxs="http://www.nuxeo.org/ecm/project/schemas/osivia/models/procedure"
+    targetNamespace="http://www.nuxeo.org/ecm/project/schemas/osivia/models/procedure">
+    
+    <xs:include schemaLocation="base.xsd" />
+    
+    <xs:complexType name="column">
+        <xs:sequence>
+            <xs:element name="label" type="xs:string" />
+            <xs:element name="variableName" type="xs:string" />
+            <xs:element name="sortable" type="xs:boolean" default="false"/>
+            <xs:element name="enableLink" type="xs:boolean" default="false"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="columnList">
+        <xs:sequence>
+            <xs:element name="column" type="nxs:column" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="dashboard">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string" />
+		    <!-- <xs:element name="groups" type="nxs:stringList" />  -->
+            <xs:element name="columns" type="nxs:columnList" />
+            <xs:element name="requestFilter" type="xs:string" />
+            <xs:element name="exportVarList" type="nxs:stringList" />
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="dashboardList">
+        <xs:sequence>
+            <xs:element name="dashboard" type="nxs:dashboard" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+</xs:schema>

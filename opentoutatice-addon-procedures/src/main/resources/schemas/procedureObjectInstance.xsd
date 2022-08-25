@@ -1,0 +1,20 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:nxs="http://www.nuxeo.org/ecm/project/schemas/osivia/models/procedure"
+    targetNamespace="http://www.nuxeo.org/ecm/project/schemas/osivia/models/procedure">
+    
+    
+    <xs:complexType name="procedureObjectInstance">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string" />
+            <xs:element name="procedureObjectId" type="xs:string" />
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="procedureObjectInstanceList">
+        <xs:sequence>
+            <xs:element name="procedureObjectInstances" type="nxs:procedureObjectInstance" minOccurs="0" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+    
+    
+</xs:schema>
