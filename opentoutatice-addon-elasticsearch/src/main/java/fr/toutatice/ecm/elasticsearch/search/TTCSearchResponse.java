@@ -37,19 +37,19 @@ public class TTCSearchResponse {
         this.schemas = schemas;
     }
 
-    public int getPageSize() {
-        return this.pageSize.intValue();
+    public Integer getPageSize() {
+        return this.pageSize;
     }
 
-    public void setPageSize(int pageSize) {
+    public void setPageSize(Integer pageSize) {
         this.pageSize = pageSize;
     }
 
-    public int getCurrentPageIndex() {
-        return this.currentPageIndex.intValue();
+    public Integer getCurrentPageIndex() {
+        return this.currentPageIndex;
     }
 
-    public void setCurrentPageIndex(int currentPageIndex) {
+    public void setCurrentPageIndex(Integer currentPageIndex) {
         this.currentPageIndex = currentPageIndex;
     }
 

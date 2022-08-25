@@ -140,9 +140,11 @@ public class TTCNxQueryBuilder extends NxQueryBuilder {
         }
 
         // Adapt order by when dc:title (for the moment)
-        if (StringUtils.contains(this.getNxql().toLowerCase(), "order by")) {
-            this.adaptSortInfos(this.getNxql());
-        }
+        // TODO vérifier le bon tri sur la version ES 6 
+        
+//        if (StringUtils.contains(this.getNxql().toLowerCase(), "order by")) {
+//            this.adaptSortInfos(this.getNxql());
+//        }
 
         return esQueryBuilder;
     }

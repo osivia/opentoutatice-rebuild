@@ -147,17 +147,18 @@ public class QueryES {
 
         // Bound results
         long hits = esResponse.getHits().getHits().length;
+        
+        // Monitoring
+        if (log.isInfoEnabled()) {
+            // Current principal name
+            Principal principal = this.session.getPrincipal();
+            String principalName = (principal != null) && (principal.getName() != null) ? principal.getName() : "null";
+
+            log.info(String.format("[%s][hits: %s][limit: %s][%s]", principalName, String.valueOf(hits), String.valueOf(queryBuilder.getLimit()),
+                    this.query));
+        }        
+        
         if (hits > DEFAULT_MAX_SIZE_RESULTS) {
-            // Monitoring
-            if (log.isInfoEnabled()) {
-                // Current principal name
-                Principal principal = this.session.getPrincipal();
-                String principalName = (principal != null) && (principal.getName() != null) ? principal.getName() : "null";
-
-                log.info(String.format("[%s][hits: %s][limit: %s][%s]", principalName, String.valueOf(hits), String.valueOf(queryBuilder.getLimit()),
-                        this.query));
-            }
-
             // Empty response
             //SearchResponse emptyResponse = new SearchResponse(InternalSearchResponse.empty(), StringUtils.EMPTY, 0, 0, 0, new ShardSearchFailure[0]);
             SearchResponse emptyResponse = new SearchResponse(InternalSearchResponse.empty(), StringUtils.EMPTY, 0, 0, 0, 0, ShardSearchFailure.EMPTY_ARRAY, Clusters.EMPTY);
