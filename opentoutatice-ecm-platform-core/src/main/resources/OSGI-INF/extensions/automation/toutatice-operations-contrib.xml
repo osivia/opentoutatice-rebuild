@@ -9,6 +9,11 @@
 		<operation class="fr.toutatice.ecm.platform.automation.FetchLiveDocument" />
 		<operation class="fr.toutatice.ecm.platform.automation.GetUserProfile" />
 		<operation class="fr.toutatice.ecm.platform.automation.SetWebID" />
+
+        <!-- Security -->
+        <operation class="fr.toutatice.ecm.platform.automation.security.GetDocumentACLs" />
+        <operation class="fr.toutatice.ecm.platform.automation.security.AddACEs" />
+        <operation class="fr.toutatice.ecm.platform.automation.security.RemoveACEs" />
 	</extension>
 
 </component>
