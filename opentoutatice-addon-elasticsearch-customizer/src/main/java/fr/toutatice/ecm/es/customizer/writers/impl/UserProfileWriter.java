@@ -123,7 +123,7 @@ public class UserProfileWriter extends AbstractCustomJsonESWriter {
 		if(session == null) {
 			
 			DirectoryService service = Framework.getService(DirectoryService.class);
-			LDAPDirectory directory = (LDAPDirectory) service.getDirectory("userLdapDirectory");
+			LDAPDirectory directory = (LDAPDirectory) service.getDirectory("ldapUserDirectory");
 			
 			session = (LDAPSession) directory.getSession();
 			
