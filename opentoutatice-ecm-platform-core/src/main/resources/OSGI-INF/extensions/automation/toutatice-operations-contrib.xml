@@ -9,7 +9,10 @@
 		<operation class="fr.toutatice.ecm.platform.automation.FetchExtendedDocumentInfos" />
 		<operation class="fr.toutatice.ecm.platform.automation.FetchLiveDocument" />
 		<operation class="fr.toutatice.ecm.platform.automation.FetchPublicationInfos" />
+
+
 		<operation class="fr.toutatice.ecm.platform.automation.GetUserProfile" />
+		<operation class="fr.toutatice.ecm.platform.automation.GetVocabularies" />
 		<operation class="fr.toutatice.ecm.platform.automation.SetWebID" />
 
         <!-- Security -->
