@@ -6,7 +6,10 @@ Bundle-Version: 2.0.0
 Bundle-Localization: plugin
 Bundle-Vendor: Open Toutatice 
 Bundle-Category: stateful
-Nuxeo-Component: OSGI-INF/extensions/automation/toutatice-chains-contrib.xml,
+Nuxeo-Component:  OSGI-INF/extensions/toutatice-core-types-contrib.xml,
+ OSGI-INF/extensions/toutatice-schemas-contrib.xml,
+ OSGI-INF/extensions/toutatice-ui-types-contrib.xml,
+ OSGI-INF/extensions/automation/toutatice-chains-contrib.xml,
  OSGI-INF/extensions/automation/toutatice-event-handler-contrib.xml,
  OSGI-INF/extensions/automation/toutatice-operations-contrib.xml,
  OSGI-INF/extensions/proxyfactory/toutatice-core-services-contrib.xml,

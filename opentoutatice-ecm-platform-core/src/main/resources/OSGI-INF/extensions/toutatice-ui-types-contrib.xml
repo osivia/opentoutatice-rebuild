@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+
+<component name="fr.toutatice.ecm.platform.web.ui.types">
+
+    <require>org.nuxeo.ecm.platform.types.TypeService</require>
+
+    <extension target="org.nuxeo.ecm.platform.types.TypeService"
+        point="types">
+
+        
+        <type id="PortalSite">
+            <label>PortalSite</label>
+            <category>Collaborative</category>
+            <description>Espace de publication</description>
+            <default-view>view_documents</default-view>
+        </type>
+
+        <type id="PortalPage">
+            <label>PortalPage</label>
+            <category>SimpleDocument</category>
+            <description>Rubrique de l'espace de publication Toutatice
+            </description>
+            <default-view>view_documents</default-view>
+        </type>
+		
+		
+    </extension>
+
+
+</component>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:nxs="http://www.nuxeo.org/ecm/project/schemas/ACRENNES2/toutatice-space"
+	targetNamespace="http://www.nuxeo.org/ecm/project/schemas/ACRENNES2/toutatice-space">
+	<!-- helper XSD definitions for list types -->
+
+	<xs:element name="spaceCommentable" type="xs:boolean"
+		default="true" />
+
+   <!-- Is space full visible from everybody, description only or private (on request) -->
+   <xs:element name="visibility" type="xs:string" />
+   
+   <!-- Space's members -->
+   <xs:complexType name="lstSpaceMembersType">
+        <xs:sequence>
+            <xs:element name="item" type="nxs:spaceMembersType" minOccurs="0"
+                maxOccurs="unbounded" />
+        </xs:sequence>
+   </xs:complexType>
+   
+   <xs:complexType name="spaceMembersType">
+        <xs:sequence>
+            <xs:element name="login" type="xs:string" />
+            <xs:element name="joinedDate" type="xs:date" />
+            <!-- News -->
+            <xs:element name="newsPeriod" default="none">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="none"/>
+                        <xs:enumeration value="daily" />
+                        <xs:enumeration value="weekly" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="lastNewsDate" type="xs:date" />
+            <xs:element name="nextNewsDate" type="xs:date" />
+        </xs:sequence>
+    </xs:complexType>
+   <xs:element name="spaceMembers" type="nxs:lstSpaceMembersType" />
+	<xs:element name="welcomeTitle" type="xs:string" />
+
+</xs:schema>

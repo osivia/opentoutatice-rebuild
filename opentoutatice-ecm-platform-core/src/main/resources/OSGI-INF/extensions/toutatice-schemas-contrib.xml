@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<component name="fr.toutatice.ecm.platform.core.schemas">
+
+	<require>org.nuxeo.ecm.core.schema.TypeService</require>
+
+	<extension target="org.nuxeo.ecm.core.schema.TypeService"
+		point="schema">
+
+		<schema name="toutatice_space" prefix="ttcs"
+			src="schemas/toutatice-space.xsd" />
+
+	</extension>
+
+</component>
