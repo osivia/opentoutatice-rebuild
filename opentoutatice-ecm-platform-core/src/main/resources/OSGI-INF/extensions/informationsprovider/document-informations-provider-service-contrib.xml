@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<component name="fr.toutatice.ecm.platform.core.services.infos.provider">
+	<documentation>
+		Service to add informations in the FetchPublicationInfo command
+	</documentation>
+	<service>
+		<provide
+			interface="fr.toutatice.ecm.platform.core.services.infos.provider.DocumentInformationsProviderService" />
+	</service>
+	<implementation
+		class="fr.toutatice.ecm.platform.core.services.infos.provider.DocumentInformationsProviderServiceImpl" />
+
+	<extension-point name="fetch_infos">
+		<documentation>
+			This extension can be used to register new information providers for
+			informations used
+			in the Document.FetchPublicationInfos operation.
+		</documentation>
+		<object
+			class="fr.toutatice.ecm.platform.core.services.infos.provider.DocumentInformationsProviderDescriptor" />
+	</extension-point>
+
+	<extension-point name="extended_fetch_infos">
+		<documentation>
+			This extension can be used to register new information providers for
+			extended informations, i.e.
+			used in the Document.FetchExtendedInfos.
+		</documentation>
+		<object
+			class="fr.toutatice.ecm.platform.core.services.infos.provider.DocumentInformationsProviderDescriptor" />
+	</extension-point>
+</component>

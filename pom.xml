@@ -103,6 +103,13 @@
   				<artifactId>nuxeo-routing-core</artifactId>			
 				<version>${nuxeo.version}</version>
 			</dependency>
+
+			<dependency>
+				<groupId>org.nuxeo.ecm.platform</groupId>
+				<artifactId>nuxeo-platform-publisher-core</artifactId>
+				<version>${nuxeo.version}</version>
+			</dependency>
+
 			<!-- 
 			<dependency>
 			    <groupId>org.nuxeo.ecm.platform</groupId>

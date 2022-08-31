@@ -7,6 +7,7 @@
 	<extension target="org.nuxeo.ecm.core.operation.OperationServiceComponent"
 		point="operations">
 		<operation class="fr.toutatice.ecm.platform.automation.FetchLiveDocument" />
+		<operation class="fr.toutatice.ecm.platform.automation.FetchPublicationInfos" />
 		<operation class="fr.toutatice.ecm.platform.automation.GetUserProfile" />
 		<operation class="fr.toutatice.ecm.platform.automation.SetWebID" />
 
