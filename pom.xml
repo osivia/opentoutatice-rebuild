@@ -110,14 +110,6 @@
 				<version>${nuxeo.version}</version>
 			</dependency>
 
-			<!-- 
-			<dependency>
-			    <groupId>org.nuxeo.ecm.platform</groupId>
-    			<artifactId>nuxeo-platform-userworkspace-core</artifactId>
-    			<version>${nuxeo.version}</version>
-			</dependency>
-			 -->
-			 
 			 <dependency>
 				<groupId>org.nuxeo.ecm.platform</groupId>
 				<artifactId>nuxeo-user-profile</artifactId>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema targetNamespace="http://www.nuxeo.core/ecm/schemas/userprofiletoutatice/"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:nxs="http://www.nuxeo.core/ecm/schemas/userprofiletoutatice/">
+
+
+	<xs:element name="bio" type="xs:string" />
+	<xs:element name="mobile" type="xs:string" />
+	<xs:element name="profession" type="xs:string" />
+	<!-- #1506 - champ libre etablissement -->
+	<xs:element name="institution" type="xs:string" />
+
+	<!-- News -->
+    <xs:element name="newsSubscription" type="xs:boolean" default="true" />
+    
+	<!-- Terms of service -->
+	<xs:element name="termsOfService" type="xs:string" />
+
+	<!-- folder preferences -->
+	<xs:element name="folders_prefs" type="nxs:folders_prefs" />
+	<xs:complexType name="folders_prefs">
+        <xs:sequence>
+            <xs:element name="folder_pref" type="nxs:folder_pref" minOccurs="0" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="folder_pref">
+        <xs:sequence>
+            <xs:element name="webid" type="xs:string" />
+            <xs:element name="display_style" type="xs:string" />
+        </xs:sequence>
+    </xs:complexType>
+    
+    <!-- Profile shown in search -->
+    <xs:element name="shownInSearch" type="xs:boolean" default="true" />
+
+    <!-- Categorized saved searches -->
+    <xs:element name="categorizedSavedSearches" type="nxs:categorizedSavedSearches"/>
+    <xs:complexType name="categorizedSavedSearches">
+        <xs:sequence>
+            <xs:element name="category" type="nxs:savedSearchCategory" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="savedSearchCategory">
+        <xs:sequence>
+            <xs:element name="categoryId" type="xs:string"/>
+            <xs:element name="categorySearches" type="nxs:savedSearches"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="savedSearches">
+        <xs:sequence>
+            <xs:element name="savedSearch" type="nxs:savedSearch" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="savedSearch">
+        <xs:sequence>
+            <xs:element name="searchId" type="xs:integer"/>
+            <xs:element name="displayName" type="xs:string"/>
+            <xs:element name="order" type="xs:integer"/>
+            <xs:element name="data" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <!-- generic user properties -->
+    <xs:element name="propertys_prefs" type="nxs:propertys_prefs" />
+    <xs:complexType name="propertys_prefs">
+        <xs:sequence>
+            <xs:element name="property_pref" type="nxs:property_pref" minOccurs="0" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="property_pref">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string" />
+            <xs:element name="value" type="xs:string" />
+        </xs:sequence>
+    </xs:complexType>
+    
+    
+</xs:schema>

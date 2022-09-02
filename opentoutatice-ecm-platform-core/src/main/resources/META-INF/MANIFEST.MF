@@ -17,5 +17,6 @@ Nuxeo-Component:  OSGI-INF/extensions/toutatice-core-types-contrib.xml,
  OSGI-INF/extensions/proxyfactory/toutatice-services-proxyfactory-contrib.xml,
  OSGI-INF/extensions/staple/core-types-contrib.xml,
  OSGI-INF/extensions/staple/schema-contrib.xml,
+ OSGI-INF/extensions/userprofile/types-contrib.xml,
  OSGI-INF/extensions/webid/toutatice-webid-service-contrib.xml
  
