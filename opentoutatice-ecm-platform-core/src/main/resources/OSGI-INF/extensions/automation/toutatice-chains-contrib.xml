@@ -4,8 +4,7 @@
 
 	<require>org.nuxeo.ecm.core.operation.OperationServiceComponent</require>
 
-	<extension target="org.nuxeo.ecm.core.operation.OperationServiceComponent"
-		point="chains">
+	<extension target="org.nuxeo.ecm.core.operation.OperationServiceComponent" point="chains">
 		
 		<chain id="createOp">
 			<!-- <operation id="Context.FetchDocument" />
@@ -19,6 +18,24 @@
 			<operation id="Document.SetWebId" />
 		</chain>
 
+        <chain id="setOnLine">
+            <operation id="Context.FetchDocument" />
+            <operation id="Document.SetOnLineOperation" />
+            <operation id="Notification.SendEvent">
+                <param type="string" name="name">documentLocallyPublished</param>
+            </operation>
+        </chain>
+
+        <!-- Called only in workflow from Nuxeo (not from Portal) -->
+        <chain id="setOnLineInWF">
+            <operation id="Fetch.DocumentInList">
+                <param type="integer" name="index">0</param>
+            </operation>
+            <operation id="Document.SetOnLineOperation" />
+            <operation id="Seam.AddInfoMessage">
+                <param type="string" name="message">expr:Le document en version @{Document.versionLabel} est en ligne</param>
+            </operation>
+        </chain>
 
 	</extension>
 

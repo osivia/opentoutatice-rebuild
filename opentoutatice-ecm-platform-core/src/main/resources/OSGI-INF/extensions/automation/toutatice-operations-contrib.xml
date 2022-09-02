@@ -1,23 +1,22 @@
 <?xml version="1.0"?>
-<component name="fr.toutatice.ecm.platform.automation.contrib"
-	version="1.0">
+<component name="fr.toutatice.ecm.platform.automation.contrib" version="1.0">
 	
 	<require>org.nuxeo.ecm.core.operation.OperationServiceComponent</require>
 
-	<extension target="org.nuxeo.ecm.core.operation.OperationServiceComponent"
-		point="operations">
+	<extension target="org.nuxeo.ecm.core.operation.OperationServiceComponent" point="operations">
+        <operation class="fr.toutatice.ecm.platform.automation.CopyACLs" />
 		<operation class="fr.toutatice.ecm.platform.automation.FetchExtendedDocumentInfos" />
 		<operation class="fr.toutatice.ecm.platform.automation.FetchLiveDocument" />
 		<operation class="fr.toutatice.ecm.platform.automation.FetchPublicationInfos" />
-
-
 		<operation class="fr.toutatice.ecm.platform.automation.GetUserProfile" />
 		<operation class="fr.toutatice.ecm.platform.automation.GetVocabularies" />
+        <operation class="fr.toutatice.ecm.platform.automation.PublishDocument" />
+        <operation class="fr.toutatice.ecm.platform.automation.SetOnLine" />
 		<operation class="fr.toutatice.ecm.platform.automation.SetWebID" />
 
         <!-- Security -->
-        <operation class="fr.toutatice.ecm.platform.automation.security.GetDocumentACLs" />
         <operation class="fr.toutatice.ecm.platform.automation.security.AddACEs" />
+        <operation class="fr.toutatice.ecm.platform.automation.security.GetDocumentACLs" />
         <operation class="fr.toutatice.ecm.platform.automation.security.RemoveACEs" />
 	</extension>
 
