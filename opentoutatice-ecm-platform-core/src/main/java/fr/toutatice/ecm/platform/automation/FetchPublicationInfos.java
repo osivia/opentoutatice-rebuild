@@ -31,7 +31,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import fr.toutatice.ecm.platform.service.url.NoSuchDocumentException;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
@@ -157,7 +156,8 @@ public class FetchPublicationInfos {
         	try {
         		path = getDocumentPathByWebId(webid);
         	}
-        	catch(NoSuchDocumentException e) {
+        	catch(DocumentNotFoundException e) {
+
         		errorsCodes.add(ERROR_CONTENT_NOT_FOUND);
                 infosPubli.element("errorCodes", errorsCodes);
                 rowInfosPubli.add(infosPubli);
@@ -339,7 +339,7 @@ public class FetchPublicationInfos {
     private static int getErrorCode(Exception inputException, int errorCodeNotFound, int errorCodeForbidden) {
         Exception exception = inputException;
         int errorCode = 0;
-        if (exception instanceof NoSuchDocumentException) {
+        if (exception instanceof DocumentNotFoundException) {
             errorCode = errorCodeNotFound;
         } else if (exception instanceof DocumentSecurityException) {
             errorCode = errorCodeForbidden;
@@ -564,10 +564,9 @@ public class FetchPublicationInfos {
     /**
      * @param webid
      * @return document if found, error otherwise.
-     * @throws NoSuchDocumentException 
      * @throws ServeurException
      */
-    private String getDocumentPathByWebId(String webid) throws NoSuchDocumentException {
+    private String getDocumentPathByWebId(String webid) throws DocumentNotFoundException {
         // Trace logs
         long begin = System.currentTimeMillis();
         
@@ -598,6 +597,11 @@ public class FetchPublicationInfos {
     }*/
 
     private Blob createBlob(JSONArray json) {
+
+        if(log.isDebugEnabled()) {
+            log.debug("Fetch publication infos resultat : "+json.toString());
+        }
+
         return new StringBlob(json.toString(), "application/json");
     }
 
@@ -734,6 +738,10 @@ public class FetchPublicationInfos {
                                 "fetch publish space name or contextualization property for space ");
                     }*/
                 } catch (Exception e) {
+
+                    if(!(e instanceof DocumentNotFoundException )) {
+                        log.error("Publish space not reachable", e);
+                    }
                     this.errorsCodes.add(getErrorCode(e, ERROR_PUBLISH_SPACE_NOT_FOUND, ERROR_PUBLISH_SPACE_FORBIDDEN));
                     this.infosPubli.element("publishSpaceInContextualization", Boolean.FALSE);
                     this.infosPubli.element("publishSpaceType", "");
@@ -757,6 +765,7 @@ public class FetchPublicationInfos {
                     }*/
 
                 } catch (Exception e) {
+                    log.error("Publish space not found",e);
                     /* Cas d'erreur */
                     this.infosPubli.element("workspaceInContextualization", Boolean.FALSE);
                     this.infosPubli.element("workspacePath", "");
@@ -811,6 +820,7 @@ public class FetchPublicationInfos {
                     this.infosPubli.element("proxyVersion", publishedDoc != null ? publishedDoc.getVersionLabel() : "0.0");
                     this.infosPubli.element("published", publishedDoc != null ? Boolean.TRUE : Boolean.FALSE);
                 } catch (Exception e) {
+                    log.error("Publish space not found",e);
                     this.infosPubli.element("isLiveModifiedFromProxy", Boolean.TRUE);
                     this.infosPubli.element("published", Boolean.FALSE);
                 }

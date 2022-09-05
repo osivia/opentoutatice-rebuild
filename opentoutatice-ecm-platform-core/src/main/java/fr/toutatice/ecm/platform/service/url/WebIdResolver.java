@@ -23,10 +23,7 @@ import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.nuxeo.ecm.core.api.CoreSession;
-import org.nuxeo.ecm.core.api.DocumentModel;
-import org.nuxeo.ecm.core.api.DocumentModelList;
-import org.nuxeo.ecm.core.api.UnrestrictedSessionRunner;
+import org.nuxeo.ecm.core.api.*;
 import org.nuxeo.ecm.core.api.impl.DocumentModelListImpl;
 
 import fr.toutatice.ecm.platform.core.constants.ToutaticeNuxeoStudioConst;
@@ -55,9 +52,8 @@ public class WebIdResolver {
      * @param coreSession
      * @param webId
      * @return unique live document given its webid.
-     * @throws NoSuchDocumentException 
      */
-    public static DocumentModel getLiveDocumentByWebId(CoreSession coreSession, String webId) throws NoSuchDocumentException {
+    public static DocumentModel getLiveDocumentByWebId(CoreSession coreSession, String webId) throws DocumentNotFoundException {
         DocumentModel live = null;
         
         if(StringUtils.isNotBlank(webId)) {
@@ -72,7 +68,7 @@ public class WebIdResolver {
 	        if (CollectionUtils.isNotEmpty(lives) && lives.size() == 1) {
 	            live = lives.get(0);
 	        } else  {
-	        	throw new NoSuchDocumentException(webId);
+	        	throw new DocumentNotFoundException(webId);
 	        }
 	        
 	        if(log.isDebugEnabled()) {
@@ -95,9 +91,8 @@ public class WebIdResolver {
      * @param coreSession
      * @param webId
      * @return document as remote proxy or live matching given webid (live or proxy, proxies).
-     * @throws NoSuchDocumentException
      */
-    public static DocumentModelList getDocumentsByWebId(CoreSession coreSession, String webId) throws NoSuchDocumentException {
+    public static DocumentModelList getDocumentsByWebId(CoreSession coreSession, String webId) throws DocumentNotFoundException {
 
         DocumentModelList documents = null;
 
@@ -112,7 +107,7 @@ public class WebIdResolver {
             documents = fecthWebIdRunner.getDocuments();
 
             if (CollectionUtils.isEmpty(documents) || (CollectionUtils.isNotEmpty(documents) && documents.size() > 1)) {
-                throw new NoSuchDocumentException(webId);
+                throw new DocumentNotFoundException(webId);
             }
             
             if(log.isDebugEnabled()) {
