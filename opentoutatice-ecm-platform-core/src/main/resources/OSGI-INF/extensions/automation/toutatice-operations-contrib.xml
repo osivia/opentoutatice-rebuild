@@ -11,6 +11,7 @@
 		<operation class="fr.toutatice.ecm.platform.automation.FetchPublishSpace" />
 		<operation class="fr.toutatice.ecm.platform.automation.FetchWorkspaceOfDocument" />
         <operation class="fr.toutatice.ecm.platform.automation.FetchPublishedDocument" />
+		<operation class="fr.toutatice.ecm.platform.automation.GetPublishedDocumentsInfos" />
 		<operation class="fr.toutatice.ecm.platform.automation.GetUserProfile" />
 		<operation class="fr.toutatice.ecm.platform.automation.GetVocabularies" />
         <operation class="fr.toutatice.ecm.platform.automation.PublishDocument" />
