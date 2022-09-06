@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 1
+Bundle-Name: OpenToutatice Quota Addon 
+Bundle-SymbolicName: org.opentoutatice.addon.quota;singleton:=true
+Bundle-Localization: plugin
+Bundle-Category: stateful
+Nuxeo-Component: OSGI-INF/extensions/ottc-quota-operations-contrib.xml
