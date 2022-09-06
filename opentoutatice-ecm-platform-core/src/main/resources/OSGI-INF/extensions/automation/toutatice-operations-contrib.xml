@@ -18,6 +18,9 @@
         <operation class="fr.toutatice.ecm.platform.automation.SetOnLine" />
 		<operation class="fr.toutatice.ecm.platform.automation.SetWebID" />
 
+		<!-- Comments -->
+		<operation class="fr.toutatice.ecm.platform.automation.comments.FetchCommentsOfDocument" />
+
         <!-- Security -->
         <operation class="fr.toutatice.ecm.platform.automation.security.AddACEs" />
         <operation class="fr.toutatice.ecm.platform.automation.security.GetDocumentACLs" />
