@@ -57,7 +57,7 @@ public class DefaultCustomJsonESWriter extends AbstractCustomJsonESWriter {
      * 
      * @param jg
      * @param doc
-     * @throws JsonGenerationException
+     * @throws IOException
      * @throws IOException
      */
     // FIXME: create a lock index?
@@ -74,8 +74,7 @@ public class DefaultCustomJsonESWriter extends AbstractCustomJsonESWriter {
      * 
 	 * @param jg
 	 * @param doc
-     * @throws IOException 
-     * @throws JsonGenerationException 
+     * @throws IOException
 	 */
     protected void writeSpaceInfos(JsonGenerator jg, DocumentModel doc) throws IOException {
 		

@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<component name="fr.toutatice.ecm.file.infos.provider" version="1.0">
+
+    <require>fr.toutatice.ecm.platform.core.services.infos.provider</require>
+    
+    <extension target="fr.toutatice.ecm.platform.core.services.infos.provider"
+        point="extended_fetch_infos">
+        <fetchInfos name="fileInfosProvider" class="fr.toutatice.ecm.platform.core.services.infos.provider.FileInfosProvider" />
+    </extension>
+    
+</component>

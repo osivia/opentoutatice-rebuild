@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<component name="fr.toutatice.ecm.platform.core.convert">
+
+  <extension target="org.nuxeo.ecm.core.convert.service.ConversionServiceImpl"
+    point="converter">
+    
+    <converter name="toutaticeAny2pdf" class="fr.toutatice.ecm.platform.core.convert.LibreOfficeCommandLineConverter">
+      <destinationMimeType>application/pdf</destinationMimeType>
+
+      <sourceMimeType>text/xml</sourceMimeType>
+      <sourceMimeType>text/html</sourceMimeType>
+      <sourceMimeType>text/plain</sourceMimeType>
+      <sourceMimeType>text/rtf</sourceMimeType>
+      <sourceMimeType>application/rtf</sourceMimeType>
+      <sourceMimeType>text/csv</sourceMimeType>
+      <sourceMimeType>text/tsv</sourceMimeType>
+      
+      <!-- .properties and .conf files -->
+      <sourceMimeType>application/x-extension-properties</sourceMimeType>
+      <sourceMimeType>application/x-extension-conf</sourceMimeType>
+
+      <!-- Microsoft office documents -->
+      <sourceMimeType>application/msword</sourceMimeType>
+      <sourceMimeType>application/vnd.ms-powerpoint</sourceMimeType>
+      <sourceMimeType>application/vnd.ms-excel</sourceMimeType>
+      <sourceMimeType>application/vnd.ms-excel.sheet.macroEnabled.12</sourceMimeType>
+      
+      <!-- Microsoft office 2007 documents -->
+      <sourceMimeType>
+        application/vnd.openxmlformats-officedocument.wordprocessingml.document
+      </sourceMimeType>
+      <sourceMimeType>
+        application/vnd.openxmlformats-officedocument.presentationml.presentation
+      </sourceMimeType>
+      <sourceMimeType>
+        application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+      </sourceMimeType>
+
+      <!-- OpenOffice.org 1.x documents -->
+      <sourceMimeType>application/vnd.sun.xml.writer</sourceMimeType>
+      <sourceMimeType>application/vnd.sun.xml.writer.template</sourceMimeType>
+      <sourceMimeType>application/vnd.sun.xml.impress</sourceMimeType>
+      <sourceMimeType>application/vnd.sun.xml.impress.template</sourceMimeType>
+      <sourceMimeType>application/vnd.sun.xml.calc</sourceMimeType>
+      <sourceMimeType>application/vnd.sun.xml.calc.template</sourceMimeType>
+      <sourceMimeType>application/vnd.sun.xml.draw</sourceMimeType>
+      <sourceMimeType>application/vnd.sun.xml.draw.template</sourceMimeType>
+
+      <!-- OpenOffice.org 2.x documents -->
+      <sourceMimeType>
+        application/vnd.oasis.opendocument.spreadsheet
+      </sourceMimeType>
+      <sourceMimeType>
+        application/vnd.oasis.opendocument.spreadsheet-template
+      </sourceMimeType>
+      <sourceMimeType>application/vnd.oasis.opendocument.text</sourceMimeType>
+      <sourceMimeType>
+        application/vnd.oasis.opendocument.text-template
+      </sourceMimeType>
+      <sourceMimeType>
+        application/vnd.oasis.opendocument.presentation
+      </sourceMimeType>
+      <sourceMimeType>
+        application/vnd.oasis.opendocument.presentation-template
+      </sourceMimeType>
+      <sourceMimeType>
+        application/vnd.oasis.opendocument.graphics
+      </sourceMimeType>
+      <sourceMimeType>
+        application/vnd.oasis.opendocument.graphics-template
+      </sourceMimeType>
+
+      <!-- WordPerfect -->
+      <sourceMimeType>application/wordperfect</sourceMimeType>
+
+    <parameters>
+        <parameter name="CommandLineName">sofficeConvertToPdf</parameter>
+        <parameter name="EnvironmentPoolSize">${ottc.converter.toutaticeAny2pdf.poolSize}</parameter>
+        <parameter name="EnvironmentTimeoutDuration">${ottc.converter.toutaticeAny2pdf.timeoutDuration}</parameter>
+    </parameters>
+    </converter>
+    
+    
+    </extension>
+    
+</component>
