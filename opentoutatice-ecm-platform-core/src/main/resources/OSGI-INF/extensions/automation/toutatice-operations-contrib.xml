@@ -22,10 +22,19 @@
 		<!-- Comments -->
 		<operation class="fr.toutatice.ecm.platform.automation.comments.FetchCommentsOfDocument" />
 
+		<!-- Documents -->
+		<operation class="fr.toutatice.ecm.platform.automation.document.CreateDocument" />
+
         <!-- Security -->
         <operation class="fr.toutatice.ecm.platform.automation.security.AddACEs" />
         <operation class="fr.toutatice.ecm.platform.automation.security.GetDocumentACLs" />
         <operation class="fr.toutatice.ecm.platform.automation.security.RemoveACEs" />
+
+		<!-- Trash
+		<operation class="fr.toutatice.ecm.platform.automation.trash.PutDocumentInTrash" />
+		<operation class="fr.toutatice.ecm.platform.automation.trash.RestoreDocuments" />
+		<operation class="fr.toutatice.ecm.platform.automation.trash.PurgeDocuments" />
+		-->
 	</extension>
 
 </component>
