@@ -3,8 +3,7 @@
 
 	<require>org.nuxeo.ecm.core.operation.OperationServiceComponent</require>
 
-	<extension target="org.nuxeo.ecm.core.operation.OperationServiceComponent"
-		point="event-handlers">
+	<extension target="org.nuxeo.ecm.core.operation.OperationServiceComponent" point="event-handlers">
 
 		<handler chainId="createOp">
 			<event>documentCreated</event>
@@ -24,6 +23,16 @@
 				<condition>Document.hasSchema('toutatice')</condition>
 			</filters>
 		</handler>
+
+        <handler chainId="setOnLine">
+            <event>documentCreated</event>
+            <!-- Case of Portal Site created with template  -->
+            <!-- <event>documentCreatedByCopy</event> -->
+            <filters>
+                <doctype>PortalSite</doctype>
+                <condition>Document.isVersion() == false</condition>
+            </filters>
+        </handler>
 
 	</extension>
 
