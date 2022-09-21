@@ -7,6 +7,7 @@ Bundle-Localization: plugin
 Bundle-Vendor: Open Toutatice 
 Bundle-Category: stateful
 Nuxeo-Component:  OSGI-INF/extensions/toutatice-core-types-contrib.xml,
+ OSGI-INF/extensions/toutatice-path-segment-contrib.xml,
  OSGI-INF/extensions/toutatice-schemas-contrib.xml,
  OSGI-INF/extensions/toutatice-ui-types-contrib.xml,
  OSGI-INF/extensions/automation/toutatice-chains-contrib.xml,
