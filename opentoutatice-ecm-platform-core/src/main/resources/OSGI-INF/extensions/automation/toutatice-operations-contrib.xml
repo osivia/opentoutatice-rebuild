@@ -31,11 +31,11 @@
         <operation class="fr.toutatice.ecm.platform.automation.security.GetDocumentACLs" />
         <operation class="fr.toutatice.ecm.platform.automation.security.RemoveACEs" />
 
-		<!-- Trash
+		<!-- Trash -->
 		<operation class="fr.toutatice.ecm.platform.automation.trash.PutDocumentInTrash" />
 		<operation class="fr.toutatice.ecm.platform.automation.trash.RestoreDocuments" />
 		<operation class="fr.toutatice.ecm.platform.automation.trash.PurgeDocuments" />
-		-->
+
 	</extension>
 
 </component>
