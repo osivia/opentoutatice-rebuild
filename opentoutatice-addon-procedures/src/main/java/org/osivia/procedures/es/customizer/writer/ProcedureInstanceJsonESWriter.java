@@ -41,12 +41,15 @@ public class ProcedureInstanceJsonESWriter extends AbstractCustomJsonESWriter {
      */
     @Override
     public void writeData(JsonGenerator jg, DocumentModel pi, String[] schemas, Map<String, String> contextParameters) throws IOException {
+
+        // TODO problème de dénoramlisation, la variable pi:globalVariablesBalues est déjà dans le mapping
+
         // Custom name /value
-        DenormalizationJsonESWriterHelper.mapKeyValue(jg, pi, ProceduresConstants.PI_VALUES_XPATH, 
-                ProceduresConstants.PI_ENTRY_KEY, ProceduresConstants.ENTRY_VALUE);
+        //DenormalizationJsonESWriterHelper.mapKeyValue(jg, pi, ProceduresConstants.PI_VALUES_XPATH,
+        //        ProceduresConstants.PI_ENTRY_KEY, ProceduresConstants.ENTRY_VALUE);
         // Custom name / value as Json
-        DenormalizationJsonESWriterHelper.mapKeyValueAsJson(jg, "pi:data", pi, ProceduresConstants.PI_VALUES_XPATH, 
-                ProceduresConstants.PI_ENTRY_KEY, ProceduresConstants.ENTRY_VALUE);
+        //DenormalizationJsonESWriterHelper.mapKeyValueAsJson(jg, "pi:data", pi, ProceduresConstants.PI_VALUES_XPATH,
+        //        ProceduresConstants.PI_ENTRY_KEY, ProceduresConstants.ENTRY_VALUE);
     }
 
 }

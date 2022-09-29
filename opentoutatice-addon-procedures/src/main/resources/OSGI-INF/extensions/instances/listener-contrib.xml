@@ -3,7 +3,7 @@
 <component name="org.osivia.procedures.instances.listener">
 
 	<require>org.nuxeo.ecm.core.event.EventServiceComponent</require>
-<!-- 
+
 	<extension target="org.nuxeo.ecm.core.event.EventServiceComponent"
 		point="listener">
 
@@ -15,5 +15,4 @@
 		</listener>
 
 	</extension>
-	 -->
 </component>

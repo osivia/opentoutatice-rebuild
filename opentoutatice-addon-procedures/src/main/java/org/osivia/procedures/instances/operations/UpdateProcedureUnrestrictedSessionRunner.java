@@ -8,6 +8,8 @@ import java.util.Map;
 import javax.security.auth.login.LoginException;
 
 import org.apache.commons.lang.StringUtils;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.nuxeo.ecm.automation.core.util.DocumentHelper;
 import org.nuxeo.ecm.automation.core.util.Properties;
 import org.nuxeo.ecm.automation.core.util.StringList;
@@ -26,6 +28,8 @@ import org.nuxeo.runtime.api.Framework;
  * @see AbstractProcedureUnrestrictedSessionRunner
  */
 public class UpdateProcedureUnrestrictedSessionRunner extends AbstractProcedureUnrestrictedSessionRunner {
+
+    private Log log = LogFactory.getLog(UpdateProcedureUnrestrictedSessionRunner.class);
 
     /** Procedure instance. */
     private DocumentModel procedureInstance;
@@ -82,7 +86,7 @@ public class UpdateProcedureUnrestrictedSessionRunner extends AbstractProcedureU
         try {
             DocumentHelper.setProperties(session, procedureInstance, properties);
         } catch (IOException e) {
-            // TODO exception
+            log.error("run UpdateProcedureUnrestrictedSessionRunner",e);
         }
 
         // Save document
@@ -96,7 +100,7 @@ public class UpdateProcedureUnrestrictedSessionRunner extends AbstractProcedureU
         if (previousTasks.size() == 1) {
             previousTask = previousTasks.get(0);
         } else {
-        	// TODO exception
+            log.error("previousTasks size is not == 1");
         }
 
         // Process identifier
@@ -110,7 +114,7 @@ public class UpdateProcedureUnrestrictedSessionRunner extends AbstractProcedureU
         try {
 			createTask(model, procedureInstance, processId, title, actors, additionalAuthorizations);
 		} catch (LoginException e) {
-        	// TODO exception
+            log.error("error createTask in updateProcedure",e);
 
 		}
         

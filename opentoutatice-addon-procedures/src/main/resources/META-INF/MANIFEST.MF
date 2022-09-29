@@ -6,13 +6,13 @@ Bundle-ManifestVersion: 1
 Bundle-SymbolicName: org.osivia.addon.procedures;singleton:=true
 Nuxeo-Component: OSGI-INF/extensions/models/core-types-contrib.xml,
  OSGI-INF/extensions/models/ui-types-contrib.xml,
+ OSGI-INF/extensions/models/actions-filters-contrib.xml,
  OSGI-INF/extensions/instances/core-types-contrib.xml,
  OSGI-INF/extensions/instances/ui-types-contrib.xml,
- OSGI-INF/extensions/generic-workflow/core-types.xml,
  OSGI-INF/extensions/instances/operations-contrib.xml,
- OSGI-INF/extensions/generic-workflow/routing-service.xml,
- OSGI-INF/extensions/es/es-customizer-contrib.xml,
  OSGI-INF/extensions/instances/security-policy-contrib.xml,
- OSGI-INF/extensions/models/actions-filters-contrib.xml,
+ OSGI-INF/extensions/instances/listener-contrib.xml,
+ OSGI-INF/extensions/generic-workflow/core-types.xml,
+ OSGI-INF/extensions/generic-workflow/routing-service.xml,
  OSGI-INF/extensions/generic-workflow/ui-filter-contrib.xml,
-
+ OSGI-INF/extensions/es/es-customizer-contrib.xml,

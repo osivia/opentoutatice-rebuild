@@ -14,11 +14,7 @@ import org.apache.commons.lang.BooleanUtils;
 import org.apache.commons.lang.StringUtils;
 import org.nuxeo.ecm.automation.core.util.Properties;
 import org.nuxeo.ecm.automation.core.util.StringList;
-import org.nuxeo.ecm.core.api.CoreSession;
-import org.nuxeo.ecm.core.api.DocumentModel;
-import org.nuxeo.ecm.core.api.DocumentModelList;
-import org.nuxeo.ecm.core.api.NuxeoGroup;
-import org.nuxeo.ecm.core.api.UnrestrictedSessionRunner;
+import org.nuxeo.ecm.core.api.*;
 import org.nuxeo.ecm.core.api.security.ACE;
 import org.nuxeo.ecm.core.api.security.ACL;
 import org.nuxeo.ecm.core.api.security.ACP;
@@ -137,7 +133,7 @@ public abstract class AbstractProcedureUnrestrictedSessionRunner extends Unrestr
             setActors(task, actors);
 
             // Task ACL
-            setAcl(task, actors, additionalAuthorizations);
+            setAcl(session, task, actors, additionalAuthorizations);
 
             // Save silently
             ToutaticeDocumentHelper.saveDocumentSilently(session, task, true);
@@ -303,11 +299,12 @@ public abstract class AbstractProcedureUnrestrictedSessionRunner extends Unrestr
     /**
      * Set ACL.
      *
-     * @param task task
-     * @param actors task users and groups
+     * @param session
+     * @param task                     task
+     * @param actors                   task users and groups
      * @param additionalAuthorizations task additional authorizations
      */
-    private void setAcl(DocumentModel task, StringList actors, StringList additionalAuthorizations) {
+    private void setAcl(CoreSession session, DocumentModel task, StringList actors, StringList additionalAuthorizations) {
         ACP acp = task.getACP();
         ACL acl = acp.getOrCreateACL(ACL.LOCAL_ACL);
         if (CollectionUtils.isNotEmpty(actors)) {
@@ -323,7 +320,8 @@ public abstract class AbstractProcedureUnrestrictedSessionRunner extends Unrestr
             }
         }
         acp.addACL(acl);
-        task.setACP(acp, true);
+        session.setACP(new IdRef(task.getId()), acp, true);
+        //task.setACP(acp, true);
     }
 
 }

@@ -79,7 +79,6 @@ public class StartProcedure {
     /**
      * Execute operation.
      *
-     * @param blobList BLOB list
      * @return procedure instance
      * @throws Exception
      */
