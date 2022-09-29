@@ -23,6 +23,7 @@
 		<operation class="fr.toutatice.ecm.platform.automation.comments.FetchCommentsOfDocument" />
 
 		<!-- Documents -->
+		<operation class="fr.toutatice.ecm.platform.automation.document.AnyBlobToPDF" />
 		<operation class="fr.toutatice.ecm.platform.automation.document.CreateDocument" />
 
         <!-- Security -->
