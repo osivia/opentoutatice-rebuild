@@ -4,7 +4,8 @@
 	<require>org.nuxeo.ecm.core.operation.OperationServiceComponent</require>
 
 	<extension target="org.nuxeo.ecm.core.operation.OperationServiceComponent" point="operations">
-        <operation class="fr.toutatice.ecm.platform.automation.CopyACLs" />
+        <operation class="fr.toutatice.ecm.platform.automation.AddComplexProperty" />
+		<operation class="fr.toutatice.ecm.platform.automation.CopyACLs" />
 		<operation class="fr.toutatice.ecm.platform.automation.FetchExtendedDocumentInfos" />
 		<operation class="fr.toutatice.ecm.platform.automation.FetchLiveDocument" />
 		<operation class="fr.toutatice.ecm.platform.automation.FetchPublicationInfos" />
