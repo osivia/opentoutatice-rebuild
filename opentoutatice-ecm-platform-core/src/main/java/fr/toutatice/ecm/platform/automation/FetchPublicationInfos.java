@@ -765,12 +765,16 @@ public class FetchPublicationInfos {
                     }*/
 
                 } catch (Exception e) {
-                    log.error("Publish space not found",e);
-                    /* Cas d'erreur */
                     this.infosPubli.element("workspaceInContextualization", Boolean.FALSE);
                     this.infosPubli.element("workspacePath", "");
                     this.infosPubli.element("workspaceDisplayName", "");
-                    this.errorsCodes.add(getErrorCode(e, ERROR_WORKSPACE_NOT_FOUND, ERROR_WORKSPACE_FORBIDDEN));
+                	
+                	if(! (e instanceof DocumentNotFoundException) ) {
+	                    log.error("Worskpace not found",e);
+	                    /* Cas d'erreur */
+
+	                    this.errorsCodes.add(getErrorCode(e, ERROR_WORKSPACE_NOT_FOUND, ERROR_WORKSPACE_FORBIDDEN));
+                	}
                 }
 
                 /* TODO: valeur toujours mise à true pour l'instant */
