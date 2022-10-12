@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<component name="fr.toutatice.ecm.platform.core.eventlistener">
+    <require>org.nuxeo.ecm.core.event.EventServiceComponent</require>
+
+    <extension target="org.nuxeo.ecm.core.event.EventServiceComponent" point="listener">
+
+        <!-- Faire en sorte que les documents modifiés en mode dit "silencieux" soient bien indexés par ElasticSearch. (http://redmine.toutatice.fr/issues/3802) -->
+        <listener name="toutaticeElasticSearchInlineListener" async="true"
+                  class="fr.toutatice.ecm.platform.core.listener.ToutaticeElasticSearchInlineListener" enabled="true"
+                  postCommit="false" priority="500">
+            <event>toutaticeElasticSearchDocumentIndexation</event>
+        </listener>
+
+    </extension>
+</component>
